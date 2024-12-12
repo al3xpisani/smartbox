@@ -1,11 +1,13 @@
+/* eslint-disable no-undef */
 import request from 'supertest'
 import app from '../../index'
+import 'dotenv/config'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 describe('Firebase Authentication Integration Test', () => {
     it('should authenticate with Firebase', async () => {
-        const email = 'alexandre.pisani.ant@gmail.com'
-        const password = '_test123'
+        const email = process.env.GOOGLE_USER
+        const password = process.env.GOOGLE_PWD
 
         const auth = getAuth()
         const userCredential = await signInWithEmailAndPassword(

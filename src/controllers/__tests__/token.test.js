@@ -1,13 +1,13 @@
+/* eslint-disable no-undef */
 // token.test.js
 import request from 'supertest'
 import express from 'express'
 import fetchMock from 'jest-fetch-mock'
 import routerToken from '../../routes/token/token'
+import 'dotenv/config'
 
-let validToken = null
-let invalidToken = null
-let user = 'alexandre.pisani.ant@gmail.com'
-let pwd = '_test123'
+let user = process.env.GOOGLE_USER
+let pwd = process.env.GOOGLE_PWD
 
 beforeAll(() => {
     fetchMock.enableMocks()
@@ -29,6 +29,7 @@ jest.mock('../../middleware/authentication', () => ({
 
 describe('Token Route Tests', () => {
     it('should return a valid token', async () => {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const firebaseAuth = require('../../middleware/authentication')
         firebaseAuth.firebaseAuth.mockImplementationOnce((req, res, next) => {
             req.body = JSON.stringify({
@@ -86,6 +87,7 @@ describe('Token Route Tests', () => {
 
     it('should handle an error and return an invalid token', async () => {
         // Mocking an error in the middleware
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const firebaseAuth = require('../../middleware/authentication')
         firebaseAuth.firebaseAuth.mockImplementationOnce((req, res, next) => {
             req.body = JSON.stringify({ invalidTokenKey: 1 })
