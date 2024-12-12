@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "types": ["node", "express"],
+        "typeRoots": ["node_modules/@types"],
         "module": "commonjs",
         "esModuleInterop": true,
         "target": "ES6",

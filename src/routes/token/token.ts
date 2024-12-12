@@ -23,13 +23,9 @@ const readTokenFromMiddleware = (body: string) => {
 routerToken.get("/", auth, async (req: Request, res: Response) => {
     try {
         const token = readTokenFromMiddleware(req.body)
-        return res
-            .status(200)
-            .json({ isAuthenticated: true, accessToken: token })
+         res.status(200).json({ isAuthenticated: true, accessToken: token })
     } catch (e) {
-        return res
-            .status(400)
-            .json({ isAuthenticated: false, accessToken: null })
+         res.status(400).json({ isAuthenticated: false, accessToken: null })
     }
 })
 

@@ -8,7 +8,6 @@ import admin from "firebase-admin"
 const app = initFirebaseApp(firebaseConfig)
 const appAdmin = initFirebaseAppAdmin(firebaseConfig)
 const db = getFirestore(app)
-
 export function initFirebaseAppAdmin(config: FirebaseOptions) {
     return admin.initializeApp(config)
 }
