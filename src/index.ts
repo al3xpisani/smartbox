@@ -13,8 +13,8 @@ export const setBodyParser2Json = () => {
     return app.use(bodyParser.json())
 }
 
-app.listen(port, () => {
-     console.log(`Express is listening at http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//      console.log(`Express is listening at http://localhost:${port}`)
+// })
 
 export default app
