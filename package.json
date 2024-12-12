@@ -4,8 +4,8 @@
     "description": "CRUD api diagram ",
     "main": "public/index.js",
     "scripts": {
-        "start": "npm run build",
-        "build": "tsc && npm run linter && node public/index.js",
+        "start": "node public/index.js",
+        "build": "tsc && npm run linter",
         "linter": "eslint . --ext .ts",
         "prettier": "npx prettier --write ./src",
         "test": "jest --testTimeout=10000 --detectOpenHandles --forceExit --verbose --setupFiles dotenv/config",
