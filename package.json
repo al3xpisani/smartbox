@@ -2,10 +2,10 @@
     "name": "api-box",
     "version": "1.0.0",
     "description": "CRUD api diagram ",
-    "main": "dist/index.js",
+    "main": "public/index.js",
     "scripts": {
-        "start": "npm run build && tsc && npm run linter && node dist/index.js",
-        "build": "babel src/index.ts -d dist",
+        "start": "npm run build && tsc && npm run linter && node public/index.js",
+        "build": "babel src/index.ts -d public",
         "linter": "eslint . --ext .ts",
         "prettier": "npx prettier --write ./src",
         "test": "jest --testTimeout=10000 --detectOpenHandles --forceExit --verbose --setupFiles dotenv/config",
