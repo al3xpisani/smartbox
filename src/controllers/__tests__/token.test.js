@@ -4,10 +4,6 @@ import request from 'supertest'
 import express from 'express'
 import fetchMock from 'jest-fetch-mock'
 import routerToken from '../../routes/token/token'
-import 'dotenv/config'
-
-let user = process.env.GOOGLE_USER
-let pwd = process.env.GOOGLE_PWD
 
 beforeAll(() => {
     fetchMock.enableMocks()
