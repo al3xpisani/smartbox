@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node public/index.js",
         "build": "tsc && npm run linter",
+        "postbuild": "cp public/index.js api/server.js",
         "linter": "eslint . --ext .ts",
         "prettier": "npx prettier --write ./src",
         "test": "jest --testTimeout=10000 --detectOpenHandles --forceExit --verbose --setupFiles dotenv/config",
